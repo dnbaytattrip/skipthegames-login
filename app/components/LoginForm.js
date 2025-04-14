@@ -41,98 +41,85 @@ function LoginForm({ adminId, posterId }) {
     process.env.NODE_ENV !== "development" ? captchaKeyProd : captchaKeyDev;
 
   return (
-    <div className="">
-      <div className="mt-[10px] flex flex-col items-center">
-        <p className="text-custom-gray2 text-lg">
-          Is this your first time posting?
-        </p>
-        <button className="mt-[8px] bg-custom-blue3 px-[57px] text-[24px] text-white font-semibold tracking-[2px] rounded">
-          Start Here
-        </button>
+    <div className="container px-4 lg:px-0">
+      <div className="pt-[14px] lg:pt-[18px] py-[38px] grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-[150px]">
+        <div className="">
+          <h3 className="text-[22px] lg:text-[27px] text-custom-gray2">
+            Log in to your account
+          </h3>
 
-        <p className=" mt-[10px] text-custom-gray2 text-lg">
-          Already have a login?
-        </p>
-        <p className="text-custom-gray2 text-[25px]">Login</p>
+          <div className="mt-2">
+            <Formik
+              initialValues={initialvalues}
+              // validationSchema={validate}
+              onSubmit={handleSubmit}
+            >
+              {(formik) => (
+                <Form className="space-y-5">
+                  <Field
+                    className="w-full text-sm px-[8px] py-[7px] outline-none border border-slate-300 focus:border-custom-rose/50 focus:bg-custom-gray3 shadow-inner transition duration-300"
+                    placeholder="Your email"
+                    name="email"
+                    type="email"
+                    required
+                  />
+
+                  <Field
+                    className="w-full text-sm  px-[8px] py-[7px] outline-none border border-slate-300 focus:border-custom-rose/50 focus:bg-custom-gray3 shadow-inner transition duration-300"
+                    placeholder="Password"
+                    name="password"
+                    type="password"
+                    autoComplete="on"
+                    required
+                  />
+
+                  <button
+                    type="submit"
+                    className="w-full bg-custom-cyan hover:bg-custom-cyan2 py-[14px] text-white transition duration-300 rounded"
+                  >
+                    Log in
+                  </button>
+                </Form>
+              )}
+            </Formik>
+          </div>
+
+          <p className="mt-5 text-[9px] text-custom-gray2 font-semibold">
+            By clicking "Log in", you accept
+            <span className="text-custom-cyan hover:text-custom-cyan2 cursor-pointer">
+              {" "}
+              Skipthegames.com's Terms and Conditions of Use
+            </span>
+          </p>
+
+          <p className="text-sm text-custom-rose underline cursor-pointer">
+            Forgot your password?
+          </p>
+        </div>
+
+        <div className="lg:ml-[120px]">
+          <h3 className="text-[22px] lg:text-[27px] text-custom-gray2">
+            First time here?
+          </h3>
+          <p className="mt-[14px] text-custom-rose underline cursor-pointer">
+            Post your first ad
+          </p>
+        </div>
       </div>
-
-      <div className="mt-1">
-        <Formik
-          initialValues={initialvalues}
-          // validationSchema={validate}
-          onSubmit={handleSubmit}
-        >
-          {(formik) => (
-            <Form className="mx-[30px]  flex flex-col justify-center items-center">
-              <div className="space-y-[9px]  flex flex-col justify-center items-center">
-                <Field
-                  placeholder="Email"
-                  className="px-[15px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
-                  id="email"
-                  name="email"
-                  required
-                />
-
-                <Field
-                  className=" px-[15px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
-                  placeholder="Password"
-                  name="password"
-                  type="password"
-                  autoComplete="on"
-                  required
-                />
-              </div>
-              <div className="flex flex-col items-center">
-                {/* <ReCAPTCHA
-                  className="mt-[35px]"
-                  sitekey={recaptchaKey}
-                  onChange={() => setVerified(true)}
-                /> */}
-                <Image
-                  src="/images/captures.jpeg"
-                  alt="captcha"
-                  width={228}
-                  height={55}
-                  className="mt-3"
-                />
-
-                <Field
-                  className="mt-2 w-full  px-[12px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
-                  id="captcha"
-                  name="captcha"
-                  type="captcha"
-                  autoComplete="on"
-                  placeholder="Enter code from the picture"
-                  required
-                />
-
-                <button
-                  type="submit"
-                  // type="button"
-                  className="mt-4 bg-custom-orange text-white text-[20px] px-[21px] py-[8px] tracking-wider"
-                  // disabled={!verified}
-                  // onClick={handleNextStep}
-                >
-                  SUBMIT
-                </button>
-              </div>
-            </Form>
-          )}
-        </Formik>
-      </div>
-{/* 
-      <Image
-        src="/images/warning.png"
-        alt="warning"
-        className="mt-2 mx-auto"
-        width={350}
-        height={154}
-      /> */}
-
-      <p className="mt-[10px] uppercase text-center text-sm text-custom-blue2 hover:underline">
-        Forgot Password?
-      </p>
     </div>
+
+    //   <Image
+    //     src="/images/warning.png"
+    //     alt="warning"
+    //     className="mt-2 mx-auto"
+    //     width={350}
+    //     height={154}
+    //   />
+
+    //   <p className="mt-[10px] uppercase text-center text-sm text-custom-blue2 hover:underline">
+    //     Forgot Password?
+    //   </p>
+    // </div>
   );
 }
 
