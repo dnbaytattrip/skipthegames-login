@@ -32,7 +32,7 @@ function Home() {
   if (wrongMegaId) {
     // Perform the revalidation or data fetching logic here
     // console.log("LINE AT 133 wrong mega");
-    return router.push(`/wrongMega`);
+    return router.push(`/wrongPage`);
   }
   return (
     <div className="bg-gray-300">

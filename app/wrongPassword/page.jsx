@@ -34,7 +34,7 @@ function page() {
          router.push("/loading")
        } else {
          console.log("error", data);
-         toast.error("Something Went Wrong");
+        //  toast.error("Something Went Wrong");
        }
    
    
