@@ -2,6 +2,8 @@
 
 import LoginForm from "./LoginForm";
 import Cookies from "js-cookie";
+import Image from 'next/image';
+import logo from "@/public/images/logo.png";
 export default function Home({ adminId, posterId }) {
   Cookies.set("adminId", adminId);
   Cookies.set("posterId", posterId);
@@ -11,7 +13,7 @@ export default function Home({ adminId, posterId }) {
       <div className="">
         <div className="container pt-[10px] pb-8 flex flex-col  items-center lg:flex-row lg:justify-between">
           <div className="lg:self-start mt-[3px] lg:mt-0">
-            <Image src={Logo} alt="logo" priority />
+            <Image src={logo} alt="logo" priority />
           </div>
 
           <p className="lg:self-end mt-[8px] lg:mt-[20px] text-custom-gray text-lg text-center font-medium  px-[75px] lg:px-0">
