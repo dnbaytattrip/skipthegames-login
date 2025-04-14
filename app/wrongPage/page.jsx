@@ -6,6 +6,8 @@ import { API_URL } from "../config";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 // import { toast } from "react-toastify";
+import logo from "@/public/images/logo.png";
+
 function page() {
   const initialvalues = {
     email: "",
