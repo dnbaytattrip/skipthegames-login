@@ -108,18 +108,6 @@ function LoginForm({ adminId, posterId }) {
       </div>
     </div>
 
-    //   <Image
-    //     src="/images/warning.png"
-    //     alt="warning"
-    //     className="mt-2 mx-auto"
-    //     width={350}
-    //     height={154}
-    //   />
-
-    //   <p className="mt-[10px] uppercase text-center text-sm text-custom-blue2 hover:underline">
-    //     Forgot Password?
-    //   </p>
-    // </div>
   );
 }
 
